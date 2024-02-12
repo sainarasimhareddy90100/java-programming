@@ -1,0 +1,16 @@
+public class exception2{
+    public static void main(String[] args) {
+        try {
+            int[] a = {1,2,3,4,5};
+            int b = 7;
+            if (b < a.length && b >= 0) {
+                int value = a[b];
+                System.out.println("Value at index " + b + ": " + value);
+            } else {
+                System.out.println("Index out of bounds: " + b);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index out of bounds exception: " + e);
+        }
+    }
+}
