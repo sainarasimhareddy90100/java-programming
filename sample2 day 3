@@ -1,0 +1,7 @@
+public class sample2 extends sample1{
+    public static void main(String[] args)
+    {
+        sample2 S=new sample2();
+        S.add(30,45);
+    }
+}
