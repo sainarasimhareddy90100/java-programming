@@ -1,0 +1,13 @@
+import java.util.SortedSet;
+import java.util.TreeSet;
+public class sortedset{
+    public static void main(String[] args) {
+        SortedSet<String> set = new TreeSet<>();
+        set.add("ABC");
+        set.add("OEF");
+        set.add("GHJ");
+        System.out.println(set);
+        set.remove("GHJ");
+        System.out.println(set);
+    }
+}
