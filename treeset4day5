@@ -1,0 +1,15 @@
+import java.util.TreeSet;
+public class Treeset {
+    public static void main(String[] args) {
+        TreeSet<String> set = new TreeSet<>();
+        set.add("ABC");
+        set.add("OEF");
+        set.add("GHJ");
+        System.out.println("Original TreeSet: " + set);
+        set.remove("GHJ");
+        System.out.println("TreeSet after removal: " + set);
+        System.out.println("Does TreeSet contain 'OEF'? " + set.contains("OEF"));
+        System.out.println("First element: " + set.first());
+        System.out.println("Last element: " + set.last());
+    }
+}
