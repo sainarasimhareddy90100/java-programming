@@ -1,0 +1,42 @@
+import java.util.TreeMap;
+import java.util.Map;
+
+public class day4program2 {
+    public static void main(String[] args) {
+        // a) Create a tree map and remove & retrieve first and n-1 entries
+        TreeMap<String, Integer> treeMap = new TreeMap<>();
+        treeMap.put("A", 1);
+        treeMap.put("B", 2);
+        treeMap.put("C", 3);
+        treeMap.put("D", 4);
+        treeMap.put("E", 5);
+
+        System.out.println("Original TreeMap: " + treeMap);
+
+        // Remove and retrieve first entry
+        Map.Entry<String, Integer> firstEntry = treeMap.pollFirstEntry();
+        System.out.println("Removed first entry: " + firstEntry);
+
+        // Remove and retrieve n-1 entries
+        int n = 3;
+        for (int i = 0; i < n - 1; i++) {
+            treeMap.pollLastEntry();
+        }
+        System.out.println("TreeMap after removing n-1 entries: " + treeMap);
+
+        // b) Build an empty TreeMap sorted by the natural order of its keys
+        TreeMap<String, Integer> emptyTreeMap = new TreeMap<>();
+        System.out.println("Empty TreeMap: " + emptyTreeMap);
+
+        // c) Derive a sub map from the original TreeMap from key "A" to key "D"
+        TreeMap<String, Integer> subMap = new TreeMap<>(treeMap.subMap("A", true, "D", true));
+        System.out.println("SubMap from key A to key D: " + subMap);
+
+        // d) Return a portion of the map whose keys are strictly less than a specified key
+        //    and a portion whose keys are greater than or equal to a specified key
+        TreeMap<String, Integer> lowerMap = new TreeMap<>(treeMap.headMap("C"));
+        TreeMap<String, Integer> higherMap = new TreeMap<>(treeMap.tailMap("C"));
+        System.out.println("Portion of TreeMap with keys strictly less than 'C': " + lowerMap);
+        System.out.println("Portion of TreeMap with keys greater than or equal to 'C': " + higherMap);
+    }
+}
