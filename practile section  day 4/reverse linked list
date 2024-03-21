@@ -1,0 +1,38 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class ReverseLinkedList {
+    public static void main(String[] args) {
+        // Create a LinkedList to store input
+        LinkedList<String> linkedList = new LinkedList<>();
+
+        // Create a Scanner object to get input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Get input from the user
+        System.out.print("Enter input (type 'done' to finish): ");
+        String input = scanner.nextLine();
+
+        // Add input to the LinkedList
+        while (!input.equalsIgnoreCase("done")) {
+            linkedList.add(input);
+            System.out.print("Enter next input (type 'done' to finish): ");
+            input = scanner.nextLine();
+        }
+
+        // Print the original LinkedList
+        System.out.println("Original LinkedList: " + linkedList);
+
+        // Reverse the LinkedList
+        LinkedList<String> reversedList = new LinkedList<>();
+        for (String item : linkedList) {
+            reversedList.addFirst(item);
+        }
+
+        // Print the reversed LinkedList
+        System.out.println("Reversed LinkedList: " + reversedList);
+
+        // Close the Scanner
+        scanner.close();
+    }
+}
