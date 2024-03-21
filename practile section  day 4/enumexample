@@ -1,0 +1,62 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class day4 {
+    public static void main(String[] args) {
+        // a) Create two hash maps and remove keys starting with "B"
+        Map<String, Integer> super1 = new HashMap<>();
+        super1.put("Apple", 1);
+        super1.put("Banana", 2);
+        super1.put("Carrot", 3);
+        super1.put("Dog", 4);
+
+        Map<String, Integer> super2 = new HashMap<>();
+        super2.put("Bat", 5);
+        super2.put("Ball", 6);
+        super2.put("Cat", 7);
+        super2.put("Dog", 8);
+
+        removeKeysStartingWithB(super1);
+        removeKeysStartingWithB(super2);
+
+        System.out.println("After removing keys starting with 'B':");
+        System.out.println("Super1: " + super1);
+        System.out.println("Super2: " + super2);
+
+        // b) Create a hash map with 5 key-value pairs and display values multiplied by 10
+        Map<String, Integer> mapB = new HashMap<>();
+        mapB.put("A", 1);
+        mapB.put("B", 2);
+        mapB.put("C", 3);
+        mapB.put("D", 4);
+        mapB.put("E", 5);
+
+        displayValuesMultipliedBy10(mapB);
+
+        // c) Iterate over the entries in the hash map
+        System.out.println("Iterating over the entries in mapB:");
+        for (Map.Entry<String, Integer> entry : mapB.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+        // d) Compute a value for key "C" if not associated with a value and merge with mapB
+        mergeValueForKeyC(mapB);
+        System.out.println("Merged map with value for key 'C':");
+        System.out.println(mapB);
+    }
+
+    private static void removeKeysStartingWithB(Map<String, Integer> map) {
+        map.entrySet().removeIf(entry -> entry.getKey().startsWith("B"));
+    }
+
+    private static void displayValuesMultipliedBy10(Map<String, Integer> map) {
+        System.out.println("Values multiplied by 10:");
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + (entry.getValue() * 10));
+        }
+    }
+
+    private static void mergeValueForKeyC(Map<String, Integer> map) {
+        map.merge("C", 10, (oldValue, newValue) -> oldValue);
+    }
+}
