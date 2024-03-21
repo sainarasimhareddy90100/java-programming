@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Day4arraylist {
+    public static void main(String[] args) {
+        // Create an ArrayList
+        List<Integer> numbers = new ArrayList<>();
+
+        // Store input at specific indices
+        numbers.add(0, 10); // Add 10 at index 0
+        numbers.add(1, 20); // Add 20 at index 1
+        numbers.add(2, 30); // Add 30 at index 2
+
+        // Display the ArrayList
+        System.out.println("ArrayList after storing input at specific indices: " + numbers);
+
+        // Remove an element using index value
+        int indexToRemove = 1;
+        if (indexToRemove >= 0 && indexToRemove < numbers.size()) {
+            int removedElement = numbers.remove(indexToRemove);
+            System.out.println("Removed element at index " + indexToRemove + ": " + removedElement);
+        } else {
+            System.out.println("Index " + indexToRemove + " is out of bounds for the ArrayList.");
+        }
+
+        // Display the ArrayList after removal
+        System.out.println("ArrayList after removing element: " + numbers);
+    }
+}
